@@ -63,6 +63,11 @@ const studentiNuovo = studenti.map((studente, voti) => {
 
 console.log(studentiNuovo);
 
+//BONUS
+
+const studentiOrdered = studenti.sort((a, b) => a.lastname.localeCompare(b.lastname));
+console.log(studentiOrdered);
+
 
 //----------------functions---------
 
