@@ -68,6 +68,22 @@ console.log(studentiNuovo);
 const studentiOrdered = studenti.sort((a, b) => a.lastname.localeCompare(b.lastname));
 console.log(studentiOrdered);
 
+const containerStudenti = document.querySelector('.row');
+
+studentiOrdered.forEach((studente) => {
+  const {firstname, lastname, matricola, voti} = studente;
+  const card =`
+  <div class="col-md-4 mb-5">
+    <div class="card h-100">
+      <img src="img/matricola${matricola}.webp" class="h-100" alt="${firstname} ${lastname}">
+      <h3>${lastname} ${firstname}</h3>
+      <p>Media Voti: ${mediaVoti(voti)}</p>
+    </div>
+  </div>
+  `
+  containerStudenti.innerHTML += card
+})
+
 
 //----------------functions---------
 
